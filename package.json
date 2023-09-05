@@ -4,9 +4,11 @@
   "description": "\"mern stack application\"",
   "main": "server.js",
   "scripts": {
-  
-    "start": "node server.js"
-   
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "node server.js",
+    "client": "npm start --prefix ./client",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "build": "npm i"
   },
   "author": "techinfoyt",
   "license": "ISC",
