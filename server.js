@@ -20,7 +20,7 @@ app.use(morgan('dev'));
 
 app.use(express.static(path.join(__dirname,'./client/build')))
 app.get('*', function(req, res){
-    res.setHeader("Access-controller-Credential","true");
+    
     res.sendFile(path.join(__dirname,'./client/build/index.html'))
 })
 
@@ -33,6 +33,7 @@ app.use("/api/v1/inventory", require("./routes/inventoyRoutes"));
 //routes
 //1 test route
 app.get('/', (req, res) => {
+    res.setHeader("Access-controller-Credential","true");
     res.status(200).json({
         msg: "welcome to blood bank App"
     });
